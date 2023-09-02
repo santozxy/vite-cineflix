@@ -1,0 +1,25 @@
+.now-playing h1 {
+    padding: 1rem 0;
+}
+
+.slide-item {
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+    background-color: #0005;
+}
+
+.slider{
+    position: relative;
+}
+
+.slide-text-cover{
+    position: absolute;
+    bottom: 0;
+    background-color: #0008;
+    width: 100%;
+    color: #fff;
+    padding: 1rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}

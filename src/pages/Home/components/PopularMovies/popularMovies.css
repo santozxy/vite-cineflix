@@ -1,7 +1,15 @@
-.top-rated-content{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem 0;
+.popular-movies {
+    margin: auto;
+}
+
+.popular-movies h1 {
+    padding: 1rem 0;
+}
+
+
+.slide-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+    background-color: #0005;
 }

@@ -1,19 +1,10 @@
-.container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
+.home {
+    padding: 1rem;
+    max-width: 1600px;
+    margin: auto;
+}
+.container{
+    display: block;
+    margin: auto;
 }
 
-.container h1{
-    color: var(--secondary);
-    padding: 2rem;
-}
-
-.movies-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-}

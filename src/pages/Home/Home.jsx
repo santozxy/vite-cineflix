@@ -1,14 +1,15 @@
-import PopularMovies from './components/PopularMovies/PopularMovies'
+import PopularMovies from './components/PopularMovies/PopularMovies';
 import NowPlaying from './components/NowPlaying/NowPlaying';
+import "./home.css"
 
 
 function Home() {
   return (
    <section className="home">
-    <div className="popular-movies">
+    <div className="container">
       <NowPlaying/>
     </div>
-    <div className="best-rated">
+    <div className="container">
       <PopularMovies/>
     </div>
    </section>

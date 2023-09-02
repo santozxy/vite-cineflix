@@ -12,8 +12,22 @@ const Header = () => {
           ReactFlix
         </Link>
       </h1>
+      <nav >
+        <ul className="nav-bar">
+          <li>
+            <Link to="/">
+              Movies
+            </Link>
+          </li>
+          <li>
+            <Link to="/series">
+              Series
+            </Link>
+          </li>
+        </ul>
+      </nav>
       <form>
-        <input type="search" name="SeachBar" placeholder="Busque um filme" />
+        <input type="search" name="SeachBar" placeholder="Search movies..." />
         <button type="submit">
           <BiSearchAlt2 />
         </button>
