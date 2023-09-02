@@ -9,7 +9,7 @@ const Header = () => {
       <h1 className="logo">
         <Link to="/">
           <BiCameraMovie />
-          CineFlix
+          ReactFlix
         </Link>
       </h1>
       <form>

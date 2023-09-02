@@ -1,0 +1,9 @@
+.loading{
+    min-height: 100vh;
+    margin: auto;
+}
+
+.loading h1{
+    font-size: 2rem;
+    color: var(--secondary);
+}

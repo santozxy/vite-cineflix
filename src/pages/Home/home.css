@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container h1{
+    color: var(--secondary);
+    padding: 2rem;
+}
+
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}

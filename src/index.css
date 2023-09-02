@@ -1,3 +1,9 @@
+:root{
+    --primary:#1d1d1d;
+    --secondary:#b70d2c;
+    --terciary:#fff;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,12 +12,12 @@
 }
 
 body{
-    background-color: #1d1d1d;
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--terciary);
 }
 a{
     text-decoration: none;
-    color: #b70d2c;
+    color: var(--secondary);
 }
 a:hover{
     color: #d7d7d7;
