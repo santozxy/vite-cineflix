@@ -18,8 +18,7 @@ function Recommendations({ id }) {
         fetch(url)
             .then((response) => response.json())
             .then((response) => {
-                console.log(response);
-                setRecommendationsMovies(response.results);
+                setRecommendationsMovies(response.results.slice(9));
             })
             .catch((err) => console.error(err));
     }
@@ -27,23 +26,21 @@ function Recommendations({ id }) {
     useEffect(() => {
         const RecommendationsMoviesURL = `${moviesURL}${id}/recommendations?${apiKey}&page=1`;
         getRecommendationsMovies(RecommendationsMoviesURL);
-    }, []);
+    }, [id]);
 
     return (
         <div className="recommendations-movies">
             <Swiper
-                slidesPerView={6}
+                slidesPerView={5}
                 spaceBetween={20}
                 pagination={false}
                 navigation={true}
-                modules={[Pagination]}
-                className="mySwiper"
             >
                 {recommendationsMovies.length === 0 && <Loading />}
                 {recommendationsMovies.length > 0 &&
                     recommendationsMovies.map((movie) => (
-                        <SwiperSlide key={movie.id} className="swiper-slide">
-                            <Link to={`/movie/${movie.id}`}>
+                        <SwiperSlide key={movie.id}>
+                            <Link to={`/movie/${movie.id}`} onClick={() => window.scrollTo(0, 0)}>
                                 <img src={imageURL + movie.poster_path} alt={movie.title} className="poster-img" />
                             </Link>
                         </SwiperSlide>

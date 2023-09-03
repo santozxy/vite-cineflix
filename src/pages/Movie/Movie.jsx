@@ -23,6 +23,7 @@ function Movie() {
     fetch(url)
       .then((response) => response.json())
       .then((response) => {
+        
         setDetail(response);
         setProductions(response.production_companies);
         setGenres(response.genres);
@@ -33,7 +34,7 @@ function Movie() {
   useEffect(() => {
     const detailsURL = `${moviesURL}${id}?${apiKey}`;
     getMovieDetails(detailsURL);
-  }, []);
+  }, [id]);
 
   return (
     <section className="movie-details">
@@ -47,7 +48,12 @@ function Movie() {
             <img src={imageURL + detail.poster_path} alt={detail.title} loading="lazy" />
             <div className="genres">
               <h3>Genres:</h3>
-              {genres.map((genres) => <h3>{genres.name}</h3>)}
+              {genres.map((genres) => 
+              <div key={genres.id}>
+                <h3>{genres.name}</h3>
+              </div>
+                
+              )}
             </div>
             <Link to={detail.homepage}>Visit Page Official</Link>
           </div>

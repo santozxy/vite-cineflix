@@ -1,6 +1,6 @@
 .movie-details {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: relative;
 }
 
@@ -21,8 +21,7 @@
 
 .details-container {
     background-color: rgb(0, 0, 0);
-    width: 100%;
-    height: 100%;
+
 }
 
 .details-content {
@@ -65,7 +64,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    z-index: 1;
+    
 }
 
 .details-1 a {
@@ -80,6 +79,7 @@
 .details-1 img {
     width: 340px;
     border-radius: 1rem;
+    z-index: 1;
 }
 
 .details {
@@ -151,7 +151,7 @@
 .recommendations-container {
     width: 100%;
     display: block;
-    padding: 4rem;
+    padding: 1rem 0 3rem;
 }
 
 .recommendations-container h1{
@@ -162,7 +162,7 @@
 }
 
 @media screen and (max-width:1024px) {
-    .details-container {
+    .details-content {
         grid-template-columns: 1fr;
     }
 
