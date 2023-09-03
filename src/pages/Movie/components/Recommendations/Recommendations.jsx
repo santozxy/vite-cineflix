@@ -31,18 +31,18 @@ function Recommendations({ id }) {
 
     return (
         <div className="recommendations-movies">
-            <h1>Most recommendations Movies</h1>
             <Swiper
-                slidesPerView={4}
+                slidesPerView={6}
                 spaceBetween={20}
                 pagination={false}
                 navigation={true}
                 modules={[Pagination]}
+                className="mySwiper"
             >
                 {recommendationsMovies.length === 0 && <Loading />}
                 {recommendationsMovies.length > 0 &&
                     recommendationsMovies.map((movie) => (
-                        <SwiperSlide key={movie.id}>
+                        <SwiperSlide key={movie.id} className="swiper-slide">
                             <Link to={`/movie/${movie.id}`}>
                                 <img src={imageURL + movie.poster_path} alt={movie.title} className="poster-img" />
                             </Link>

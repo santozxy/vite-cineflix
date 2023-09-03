@@ -1,5 +1,9 @@
+
 .poster-img{
-    width: 300px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 1rem;
 }
 .recommendations{
 

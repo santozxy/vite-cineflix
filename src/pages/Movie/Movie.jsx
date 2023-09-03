@@ -4,6 +4,7 @@ import { FcRating } from 'react-icons/fc'
 import { Link } from "react-router-dom";
 
 import './movie.css'
+import Recommendations from './components/Recommendations/Recommendations'
 import Loading from "../../components/Loading/Loading";
 
 const moviesURL = import.meta.env.VITE_API_MOVIE;
@@ -40,37 +41,44 @@ function Movie() {
         <img src={imageURL + detail.backdrop_path} alt={detail.title} loading="lazy" />
       </div>
       <div className="details-container">
-        <div className="details-1">
-          <img src={imageURL + detail.poster_path} alt={detail.title} loading="lazy" />
-          <div className="genres">
-            <h3>Genres:</h3>
-            {genres.map((genres) => <h3>{genres.name}</h3>)}
-          </div>
-          <Link to={detail.homepage}>Visit Page Official</Link>
-        </div>
+        <div className="details-content">
 
-        <div className="details">
-        <div className="titles">
-          <h1>{detail.title}</h1>
-          <h2>{detail.tagline}</h2>
-        </div>
-          <div className="overview">
-            <p>{detail.overview}</p>
-
+          <div className="details-1">
+            <img src={imageURL + detail.poster_path} alt={detail.title} loading="lazy" />
+            <div className="genres">
+              <h3>Genres:</h3>
+              {genres.map((genres) => <h3>{genres.name}</h3>)}
+            </div>
+            <Link to={detail.homepage}>Visit Page Official</Link>
           </div>
-          <h2>Rating <FcRating /> {detail.vote_average}</h2>
-          <div className="productions-container">
-            <h2>Productors</h2>
-            <div className="productions">
-              {productions.map((productions) => (
-                <h3>{productions.name}</h3>
-              )
-              )}
+
+          <div className="details">
+            <div className="titles">
+              <h1>{detail.title}</h1>
+              <h2>{detail.tagline}</h2>
+            </div>
+            <div className="overview">
+              <p>{detail.overview}</p>
+
+            </div>
+            <h2>Rating <FcRating /> {detail.vote_average}</h2>
+            <div className="productions-container">
+              <h2>Productors</h2>
+              <div className="productions">
+                {productions.map((productions) => (
+                  <h3>{productions.name}</h3>
+                )
+                )}
+              </div>
             </div>
           </div>
         </div>
-
+        <div className="recommendations-container">
+          <h1>Recommended movies</h1>
+          <Recommendations id={id} />
+        </div>
       </div>
+
 
     </section>
   );
