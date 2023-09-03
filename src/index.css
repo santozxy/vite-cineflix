@@ -1,14 +1,16 @@
 :root {
     --primary: #1d1d1d;
-    --secondary: #b70d2c;
+    --secondary: #b70d2c;;
     --terciary: #fff;
 }
 
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
     box-sizing: border-box;
     font-family: Helvetica, sans-serif;
+    list-style: none;
 }
 
 body {
@@ -16,15 +18,23 @@ body {
     color: var(--terciary);
 }
 
-a {
-    text-decoration: none;
-}
 
-ul{
-    list-style: none;
-}
 
-.swiper-button-next,
-.swiper-button-prev {
+.swiper-button-next,.swiper-button-prev {
     color: var(--secondary);
+}
+
+
+.swiper-pagination-bullet{
+    background-color: #565656;
+    opacity: .7;
+    padding: .5rem;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: var(--secondary);
+    opacity: .7;
+    color: var(--secondary);
+    padding: .5rem;
+    opacity: 1;
 }

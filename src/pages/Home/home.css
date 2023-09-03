@@ -1,10 +1,9 @@
-.home {
+.home {}
+
+.container {
     padding: 1rem;
-    max-width: 1600px;
     margin: auto;
-}
-.container{
+    max-width: 1600px;
     display: block;
     margin: auto;
 }
-

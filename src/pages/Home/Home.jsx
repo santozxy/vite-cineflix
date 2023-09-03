@@ -5,14 +5,12 @@ import "./home.css"
 
 function Home() {
   return (
-   <section className="home">
-    <div className="container">
-      <NowPlaying/>
-    </div>
-    <div className="container">
-      <PopularMovies/>
-    </div>
-   </section>
+    <section className="home">
+      <NowPlaying />
+      <div className="container">
+        <PopularMovies />
+      </div>
+    </section>
   );
 }
 

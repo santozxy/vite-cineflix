@@ -1,16 +1,17 @@
 header {
-    display: flex;
-    width: 100%;
-    background-color: #050505;
-    justify-content: space-around;
-    align-items: center;
+    background-color:#111;
     padding: 1rem 0;
-    position: sticky;
     top: 0;
     z-index: 99;
+    position: fixed;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    width: 100%;
 }
 
-header a {
+
+.logo a {
     display: flex;
     gap: 1rem;
     color: var(--secondary);
@@ -26,6 +27,25 @@ header a {
 .nav-bar li {
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+.nav-bar li a:hover {
+    color: var(--secondary);
+}
+
+
+
+.nav-bar li a {
+    color: var(--terciary);
+    transition: all .5s;
+}
+
+.nav-bar li a.active {
+    color: var(--secondary);
+    padding: .3rem .8rem;
+    border-radius: .5rem;
+    border: 1px solid var(--secondary);
+    background-color: var(--primary);
 }
 
 
@@ -50,4 +70,37 @@ form button {
     background: none;
     font-size: 2rem;
     color: var(--secondary);
+}
+
+@media screen and (max-width:1024px) {
+    form input {
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width:820px) {
+    form input {
+        width: 10rem;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .logo a {
+        font-size: 1.2rem;
+    }
+
+    .nav-bar li {
+        font-size: 1rem;
+    }
+  
+    .nav-bar li a.active {
+        color: var(--secondary);
+        padding: .3rem .8rem;
+        border-radius: .5rem;
+        border: 1px solid var(--secondary);
+        background-color: var(--primary);
+    }
+    form input {
+        width: 6rem;
+    }
 }

@@ -3,6 +3,7 @@ import Loading from "../../../../components/Loading/Loading";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative, Pagination } from "swiper/modules";
+import {} from 'react-icons'
 
 import "./nowPlaying.css";
 
@@ -18,7 +19,7 @@ const NowPlaying = () => {
     fetch(url)
       .then((response) => response.json())
       .then((response) => {
-        setNowPlayingMovies(response.results);
+        setNowPlayingMovies(response.results.slice(8));
       })
       .catch((err) => console.error(err));
   }
@@ -28,26 +29,20 @@ const NowPlaying = () => {
     getNowPlaying(nowPlayingURL);
   }, []);
 
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + '</span>';
-    },
-  };
-
   return (
     <div className="now-playing">
-      <h1>Most Now Playing</h1>
       <Swiper
         slidesPerView={1}
         autoplay={{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         spaceBetween={15}
-        pagination={false}
+        pagination={{
+          clickable:true,
+          dynamicBullets:true
+        }}
         navigation={true}
-        effect={'creative'}
         modules={[Pagination, EffectCreative]}
       >
         {nowPlayingMovies.length === 0 && <Loading />}
@@ -59,10 +54,10 @@ const NowPlaying = () => {
                   src={imageURL + movie.backdrop_path}
                   alt={movie.title}
                   className="slide-item"
+                  loading="lazy"
                 />
                 <div className="slide-text-cover">
-                  <h1>{movie.title}</h1>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam enim voluptatem officia corporis perspiciatis pariatur.</p>
+                  <h1 className="title">{movie.title}</h1>
                 </div>
               </Link>
             </SwiperSlide>

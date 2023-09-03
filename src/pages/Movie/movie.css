@@ -1,0 +1,156 @@
+.movie-details {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.back img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: top;
+    opacity: .2;
+}
+
+.details-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 5rem 2rem 2rem;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+
+.titles {
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.titles h1 {
+    width: 100%;
+    font-size: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.titles h2 {
+    color: var(--secondary);
+    padding: 1rem;
+}
+
+.details-1 {
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+}
+
+.details-1 a {
+    color: var(--secondary);
+    padding: .8rem 1rem;
+    border-radius: .5rem;
+    border: 1px solid var(--secondary);
+    background-color: var(--primary);
+    font-weight: bold;
+}
+
+.details-1 img {
+    width: 340px;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.details {
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.genres {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0 0 1rem;
+}
+
+
+.overview {
+    padding: 1rem;
+    font-size: 1.5rem;
+    max-width: 50%;
+    text-align: center;
+}
+
+
+.detail-title {
+    padding: 5rem;
+    display: flex;
+}
+
+.rated {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+}
+
+.productions-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-top: 1px solid var(--secondary);
+    padding-top: 1rem;
+}
+
+.productions {
+    justify-content: center;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.productions h3 {
+    text-align: center;
+    color: var(--secondary);
+    padding: .6rem 1rem;
+    border-radius: .5rem;
+    border: 1px solid var(--secondary);
+    background-color: var(--primary);
+
+}
+
+@media screen and (max-width:1024px) {
+    .details-container {
+        grid-template-columns: 1fr;
+    }
+
+    .overview {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+}
