@@ -18,7 +18,7 @@ function Recommendations({ id }) {
         fetch(url)
             .then((response) => response.json())
             .then((response) => {
-                setRecommendationsMovies(response.results.slice(9));
+                setRecommendationsMovies(response.results);
             })
             .catch((err) => console.error(err));
     }
@@ -38,7 +38,7 @@ function Recommendations({ id }) {
             >
                 {recommendationsMovies.length === 0 && <Loading />}
                 {recommendationsMovies.length > 0 &&
-                    recommendationsMovies.map((movie) => (
+                    recommendationsMovies.filter(movie => movie.poster_path !== null).map((movie) => (
                         <SwiperSlide key={movie.id}>
                             <Link to={`/movie/${movie.id}`} onClick={() => window.scrollTo(0, 0)}>
                                 <img src={imageURL + movie.poster_path} alt={movie.title} className="poster-img" />

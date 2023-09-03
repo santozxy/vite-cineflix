@@ -1,0 +1,27 @@
+.search{
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container{
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.search-card{
+    background-color: #111;
+    padding: 1rem;
+}
+
+
+.search-container img{
+    width: 300px;
+}

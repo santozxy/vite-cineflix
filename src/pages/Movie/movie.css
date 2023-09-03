@@ -68,6 +68,7 @@
 }
 
 .details-1 a {
+    z-index: 99;
     color: var(--secondary);
     padding: .8rem 1rem;
     border-radius: .5rem;

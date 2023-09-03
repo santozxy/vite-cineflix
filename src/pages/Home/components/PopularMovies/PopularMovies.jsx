@@ -21,7 +21,6 @@ function PopularMovies() {
     fetch(url)
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
         setPopularMovies(response.results);
       })
       .catch((err) => console.error(err));
@@ -45,7 +44,7 @@ function PopularMovies() {
         {popularMovies.length > 0 &&
           popularMovies.map((movie) => (
             <SwiperSlide key={movie.id}>
-              <Link to={`/movie/${movie.id}`}>
+              <Link to={`/movie/${movie.id}`}  onClick={() => window.scrollTo(0, 0)}>
                 <img src={imageURL + movie.poster_path} alt={movie.title} className="slide-img" />
               </Link>
             </SwiperSlide>

@@ -23,7 +23,6 @@ function Movie() {
     fetch(url)
       .then((response) => response.json())
       .then((response) => {
-        
         setDetail(response);
         setProductions(response.production_companies);
         setGenres(response.genres);
@@ -43,19 +42,17 @@ function Movie() {
       </div>
       <div className="details-container">
         <div className="details-content">
-
           <div className="details-1">
             <img src={imageURL + detail.poster_path} alt={detail.title} loading="lazy" />
             <div className="genres">
               <h3>Genres:</h3>
-              {genres.map((genres) => 
-              <div key={genres.id}>
-                <h3>{genres.name}</h3>
-              </div>
-                
+              {genres.map((genres) =>
+                <div key={genres.id}>
+                  <h3>{genres.name}</h3>
+                </div>
               )}
             </div>
-            <Link to={detail.homepage}>Visit Page Official</Link>
+            <a href={detail.homepage} target="_blank">Visit Page Official</a>
           </div>
 
           <div className="details">
@@ -72,7 +69,7 @@ function Movie() {
               <h2>Productors</h2>
               <div className="productions">
                 {productions.map((productions) => (
-                  <h3>{productions.name}</h3>
+                  <h3 key={productions.id}>{productions.name}</h3>
                 )
                 )}
               </div>

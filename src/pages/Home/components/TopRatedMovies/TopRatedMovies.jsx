@@ -7,8 +7,6 @@ import { Link } from "react-router-dom";
 import Loading from "../../../../components/Loading/Loading";
 import "./topRatedMovies.css";
 
-
-
 const moviesURL = import.meta.env.VITE_API_TOP_RATED;
 const apiKey = import.meta.env.VITE_API_KEY;
 const imageURL = import.meta.env.VITE_IMG;
@@ -21,7 +19,6 @@ function TopRatedMovies() {
     fetch(url)
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
         setTopRatedMovies(response.results);
       })
       .catch((err) => console.error(err));
@@ -33,7 +30,7 @@ function TopRatedMovies() {
 
   return (
     <div className="top-rated-movies">
-      <h1>Most TopRated Movies</h1>
+      <h1>Most Top rated Movies</h1>
       <Swiper
         slidesPerView={4}
         spaceBetween={20}
@@ -42,9 +39,9 @@ function TopRatedMovies() {
       >
         {topRatedMovies.length === 0 && <Loading />}
         {topRatedMovies.length > 0 &&
-          topRatedMovies.map((movie) => (
+          topRatedMovies.filter(movie => movie.poster_path !== null).map(movie => (
             <SwiperSlide key={movie.id}>
-              <Link to={`/movie/${movie.id}`} >
+              <Link to={`/movie/${movie.id}`}  onClick={() => window.scrollTo(0, 0)}>
                 <img src={imageURL + movie.poster_path} alt={movie.title} className="slide-img" />
               </Link>
             </SwiperSlide>
